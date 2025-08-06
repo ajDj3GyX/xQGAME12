@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楚汉棋争 - 在线对战平台</title>
+    
+    <!-- Ably Realtime Library -->
+    <script src="https://cdn.ably.io/lib/ably.min-1.2.js"></script>
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Deferred JavaScript -->
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="particles-container"></div>
+    
+    <main class="container">
+        <!-- Main Lobby Card with Glassmorphism Effect -->
+        <div class="card">
+            <header class="card-header">
+                <h1><i class="fa-solid fa-chess-rook"></i> 楚汉棋争</h1>
+                <p>创建或加入房间，即刻开始对弈</p>
+            </header>
+
+            <div id="action-panel">
+                <div class="input-group">
+                    <input type="text" id="room-code-input" placeholder="输入6位房间码" maxlength="6">
+                    <button id="join-room-btn" class="btn btn-join">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        加入房间
+                    </button>
+                </div>
+                
+                <div class="lobby-buttons">
+                    <button id="create-room-btn" class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i> 创建新房间
+                    </button>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-info"></i> 游戏说明</h3>
+                <ul>
+                    <li><i class="fa-solid fa-key"></i> 创建房间后分享房间码给好友</li>
+                    <li><i class="fa-solid fa-rotate-left"></i> 游戏支持悔棋功能</li>
+                    <li><i class="fa-solid fa-flag"></i> 可随时认输结束游戏</li>
+                    <li><i class="fa-solid fa-users"></i> 实时同步对弈状态</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notification Container -->
+        <div id="notification-container"></div>
+    </main>
+
+    <footer>
+        <p>© 2024 楚汉棋争 - 在线中国象棋对战平台</p>
+    </footer>
+</body>
+</html>

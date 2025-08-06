@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楚汉棋争 - 对战中</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="particles-container"></div>
+    
+    <div class="game-header">
+        <div class="player-info">
+            <div id="player-red-indicator" class="player-indicator red">
+                <i class="fa-solid fa-user"></i>
+                <span id="player-red-name">红方</span>
+            </div>
+            <div class="game-status" id="gameStatus">
+                <span><i class="fa-solid fa-spinner fa-spin"></i> 等待对手连接...</span>
+            </div>
+            <div id="player-black-indicator" class="player-indicator black">
+                <i class="fa-solid fa-user"></i>
+                <span id="player-black-name">黑方</span>
+            </div>
+        </div>
+        <div class="room-info">
+            <i class="fa-solid fa-door-open"></i> 房间号: <strong id="roomCodeDisplay">...</strong>
+        </div>
+    </div>
+
+    <main class="container game-container">
+        <!-- Chessboard Area -->
+        <section class="board-area">
+            <div id="board-wrapper">
+                <div id="board"></div>
+                <div id="river-text">
+                    <span>楚 河</span>
+                    <span>漢 界</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="game-controls">
+        <button id="undoBtn" class="btn btn-control">
+            <i class="fa-solid fa-rotate-left"></i> 悔棋
+        </button>
+        <button id="surrenderBtn" class="btn btn-control btn-danger">
+            <i class="fa-solid fa-flag"></i> 认输
+        </button>
+        <button id="backBtn" class="btn btn-control">
+            <i class="fa-solid fa-house"></i> 返回大厅
+        </button>
+    </div>
+
+    <!-- Game Event Modal -->
+    <dialog id="game-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i id="modal-icon" class="fa-solid fa-trophy"></i>
+            </div>
+            <h2 id="modal-title">游戏结束</h2>
+            <p id="modal-text">恭喜你，你获得了胜利！</p>
+            <div class="modal-actions">
+                <button id="modal-action-primary" class="btn btn-primary">返回大厅</button>
+                <button id="modal-action-secondary" class="btn btn-secondary">关闭</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Scripts -->
+    <script src="https://cdn.ably.io/lib/ably.min-1.2.js"></script>
+    <script src="game.js" defer></script>
+</body>
+</html>
